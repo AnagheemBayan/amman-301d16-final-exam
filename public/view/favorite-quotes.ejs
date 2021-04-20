@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include (./public/layout/head.ejs)%>
+</head>
+<body>
+    <main>
+        <div>
+        <%result.forEach(value =>{ %>
+
+            <h3><%=value.character %></h3>
+            <p><a href="/favorite-quotes/<%=value.id %>"><%=value. image %></a></p>
+            <p><%=value.quote%></p>
+            <p><%=value. characterDirection %></p>
+
+            <%  }) %>
+        </div>
+
+        <form action="/favorite-quotes/<%=value.id %>" method="POST">
+            <input type="hidden" value=" value.character " name="character ">
+            <input type="hidden" value=" value.image  " name="image ">
+            <input type="hidden" value=" value.quote " name="quote">
+            <input type="hidden" value=" value.characterDirection " name="characterDirection">
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include (./public/layout/head.ejs)%>
+</head>
+<body>
+    <main>
+        <div>
+        <%data.forEach(value =>{ %>
+
+            <h3><%=value.character %></h3>
+            <p><%=value. image %></p>
+            <p><%=value.quote%></p>
+           
+            <%  }) %>
+        </div>
+
+        <form action="//favorite-quotes/<%=value.id %>?method=Update" method="POST">
+            <input type="text" value=" value.character " name="character ">
+            <input type="text" value=" value.image  " name="image ">
+            <input type="text" value=" value.quote " name="quote">
+            <label for="edit "> Leave what you want </label>
+            <textarea name="" id="" > </textarea>
+            <button>Update character</button>
+
+        </form>
+        <form action="//favorite-quotes/<%=value.id %>?method=Delete" method="POST">
+            <button>Delete character</button>
+        </form>
+    </main>
+</body>
+</html>
+
